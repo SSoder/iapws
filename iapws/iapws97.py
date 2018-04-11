@@ -4190,7 +4190,8 @@ def prop0(T, P):
     prop0["h"] = Tr*got*R*T
     prop0["s"] = R*(Tr*got-go)
     prop0["cp"] = -R*Tr**2*gott
-    prop0["cv"] = R*(-Tr**2*gott+(gop-Tr*gopt)**2/gopp)
+    prop0["cv1"] = R*(-Tr**2*gott+(gop-Tr*gopt)**2/gopp)
+    prop0["cv2"] = R*(-Tr**2*gott)-1
 
     prop0["w"] = (R*T*1000/(1+1/Tr**2/gott))**0.5
     prop0["alfav"] = 1/T
@@ -4595,10 +4596,13 @@ class IAPWS97(object):
         self.g0 = self.h0-self.T*self.s0
 
         self.cp0 = cp0["cp"]
-        self.cv0 = cp0["cv"]
-        self.cp0_cv = self.cp0/self.cv0
+        self.cv01 = cp0["cv1"]
+        self.cv02 = cp0["cv2"]
+        self.cp0_cv1 = self.cp0/self.cv01
+        self.cp0_cv2 = self.cp0/self.cv02
         self.w0 = cp0["w"]
-        self.gamma0 = self.cp0_cv
+        self.gamma01 = self.cp0_cv1
+        self.gamma02 = self.cp0_cv2
 
         self.Liquid = _fase()
         self.Vapor = _fase()

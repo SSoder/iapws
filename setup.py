@@ -13,7 +13,7 @@ setup(
     version=__version__,
     packages=['iapws'],
     package_data={'': ['LICENSE']},
-    author='jjgomera',
+    author='jjgomera; SGSoder',
     author_email='jjgomera@gmail.com',
     url='https://github.com/jjgomera/iapws',
     download_url='https://github.com/jjgomera/iapws/tarball/v' + __version__,
@@ -23,7 +23,7 @@ setup(
     license="gpl v3",
     install_requires=["scipy"],
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: XXX - Local, Test",
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
